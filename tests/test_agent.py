@@ -1,10 +1,11 @@
-from rmrkl import ChatZeroShotAgent, RetryAgentExecutor
-from langchain.llms.fake import FakeListLLM
 from langchain.agents import load_tools
+from langchain.llms.fake import FakeListLLM
+
+from rmrkl import ChatZeroShotAgent, RetryAgentExecutor
 
 
 def test_agent_init():
-    tools = load_tools(["terminal"])
+    tools = load_tools(["terminal"], allow_dangerous_tools=True)
     responses = [
         "I should use the REPL tool",
         "Action: Python REPL\nAction Input: print(2 + 2)",
