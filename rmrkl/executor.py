@@ -1,14 +1,11 @@
-from typing import Dict, List, Tuple, Union, Optional
-
 from langchain.agents import AgentExecutor
-from langchain.schema import AgentAction, AgentFinish, OutputParserException
 from langchain.tools import BaseTool
-from langchain.callbacks.manager import CallbackManagerForChainRun
+from pydantic import Field
 
 
 class ExceptionTool(BaseTool):
-    name = "_Exception"
-    description = "Exception tool"
+    name: str = Field(default="_Exception")
+    description: str = Field(default="Exception tool")
 
     def _run(self, query: str) -> str:
         return query

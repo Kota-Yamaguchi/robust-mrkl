@@ -14,7 +14,7 @@ setup(
     url="https://github.com/whitead/robust-mrkl",
     license="MIT",
     packages=["rmrkl"],
-    install_requires=["langchain>=0.0.157"],
+    install_requires=["langchain>=0.3,<0.4", "pydantic", "langchain-community>=0.3.1", "langchain-experimental"],
     test_suite="tests",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -23,3 +23,5 @@ setup(
         "License :: OSI Approved :: MIT License"
     ],
 )
+
+# langchain-experimental langchain-communityが必要
